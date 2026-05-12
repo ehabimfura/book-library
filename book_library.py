@@ -68,3 +68,33 @@ class User(BookUser):
         user.created_at = data["created_at"]
         user.updated_at = data["updated_at"]
         return user
+
+
+def load_database():
+    if not os.path.exists(DB_FILE):
+        return {"books": [], "users": []}
+    with open(DB_FILE, "r") as f:
+        return json.load(f)
+
+
+def save_database(db_data):
+    with open(DB_FILE, "w") as f:
+        json.dump(db_data, f, indent=4)
+
+
+def initialize_dummy_data():
+    b1 = Book(101, "The Great Gatsby", "F. Scott Fitzgerald", 1925, "Novel")
+    b2 = Book(102, "To Kill a Mockingbird", "Harper Lee", 1960, "Novel")
+    b3 = Book(103, "1984", "George Orwell", 1949, "Dystopian")
+    b4 = Book(104, "Pride and Prejudice", "Jane Austen", 1813, "Romance")
+    u1 = User("Alice", 1)
+    u2 = User("Bob", 2)
+    u3 = User("Carol", 3)
+    u4 = User("David", 4)
+
+    db = {
+        "books": [b1.to_json_dict(), b2.to_json_dict(), b3.to_json_dict(), b4.to_json_dict()],
+        "users": [u1.to_json_dict(), u2.to_json_dict(), u3.to_json_dict(), u4.to_json_dict()]
+    }
+    save_database(db)
+    print("Database initialized with dummy data entries.")
