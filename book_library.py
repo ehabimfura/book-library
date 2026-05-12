@@ -98,3 +98,26 @@ def initialize_dummy_data():
     }
     save_database(db)
     print("Database initialized with dummy data entries.")
+
+
+if not os.path.exists(DB_FILE):
+    initialize_dummy_data()
+
+db = load_database()
+
+active_books = [Book(0, "", "", "", "").load_from_dict(b) for b in db["books"]]
+active_users = [User("", 0).load_from_dict(u) for u in db["users"]]
+
+print("\n--- Displaying Books Read From Storage ---")
+for book in active_books:
+    print(f"[{book.id}] {book.title} - Borrowed Status: {book.is_borrowed}")
+
+print("\n--- Modifying Title of Book 101 ---")
+active_books[0].title = "The Great Gatsby (Special Edition)"
+
+active_users[1].borrow_book(active_books[0])
+
+db["books"] = [book.to_json_dict() for book in active_books]
+db["users"] = [user.to_json_dict() for user in active_users]
+save_database(db)
+print("\nChanges saved successfully to db.json.")
