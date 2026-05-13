@@ -2,65 +2,78 @@
     "books": [
         {
             "id": 101,
-            "title": "The Great Gatsby (Special Edition)",
-            "author": "F. Scott Fitzgerald",
-            "year": 1925,
-            "genre": "Novel",
-            "created_at": "2026-05-12 15:52:49",
+            "Created_at": "2026-05-12 15:52:49",
+            "Updated_at": "2026-05-12 15:52:49",
+            "Title": "The Great Gatsby (Special Edition)",
+            "Author": "F. Scott Fitzgerald",
+            "Genre": "Novel",
+            "Year": 1925,
             "is_borrowed": true
         },
         {
             "id": 102,
-            "title": "To Kill a Mockingbird",
-            "author": "Harper Lee",
-            "year": 1960,
-            "genre": "Novel",
-            "created_at": "2026-05-12 15:52:49",
+            "Created_at": "2026-05-12 15:52:49",
+            "Updated_at": "2026-05-12 15:52:49",
+            "Title": "To Kill a Mockingbird",
+            "Author": "Harper Lee",
+            "Genre": "Novel",
+            "Year": 1960,
             "is_borrowed": false
         },
         {
             "id": 103,
-            "title": "1984",
-            "author": "George Orwell",
-            "year": 1949,
-            "genre": "Dystopian",
-            "created_at": "2026-05-12 15:52:49",
+            "Created_at": "2026-05-12 15:52:49",
+            "Updated_at": "2026-05-12 15:52:49",
+            "Title": "1984",
+            "Author": "George Orwell",
+            "Genre": "Dystopian",
+            "Year": 1949,
             "is_borrowed": false
         },
         {
             "id": 104,
-            "title": "Pride and Prejudice",
-            "author": "Jane Austen",
-            "year": 1813,
-            "genre": "Romance",
-            "created_at": "2026-05-12 15:52:49",
+            "Created_at": "2026-05-12 15:52:49",
+            "Updated_at": "2026-05-12 15:52:49",
+            "Title": "Pride and Prejudice",
+            "Author": "Jane Austen",
+            "Genre": "Romance",
+            "Year": 1813,
             "is_borrowed": false
         }
     ],
     "users": [
         {
-            "name": "Alice",
             "id": 1,
-            "created_at": "2026-05-12 15:52:49",
-            "updated_at": "2026-05-12 15:52:49"
+            "Created_at": "2026-05-12 15:52:49",
+            "Updated_at": "2026-05-12 15:52:49",
+            "Name": "Alice"
         },
         {
-            "name": "Bob",
             "id": 2,
-            "created_at": "2026-05-12 15:52:49",
-            "updated_at": "2026-05-12 15:52:49"
+            "Created_at": "2026-05-12 15:52:49",
+            "Updated_at": "2026-05-13 15:04:21",
+            "Name": "Bob"
         },
         {
-            "name": "Carol",
             "id": 3,
-            "created_at": "2026-05-12 15:52:49",
-            "updated_at": "2026-05-12 15:52:49"
+            "Created_at": "2026-05-12 15:52:49",
+            "Updated_at": "2026-05-12 15:52:49",
+            "Name": "Carol"
         },
         {
-            "name": "David",
             "id": 4,
-            "created_at": "2026-05-12 15:52:49",
-            "updated_at": "2026-05-12 15:52:49"
+            "Created_at": "2026-05-12 15:52:49",
+            "Updated_at": "2026-05-12 15:52:49",
+            "Name": "David"
+        }
+    ],
+    "history": [
+        {
+            "id": 1001,
+            "Book_ID": 101,
+            "User_ID": 2,
+            "date_borrowed": "2026-05-13 15:04:21",
+            "date_returned": null
         }
     ]
 }
